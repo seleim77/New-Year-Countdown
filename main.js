@@ -14,12 +14,15 @@ function updateCountdown() {
     const gap = newYearTime - now;
     const second = 1000;
     const minute = second * 60;
-    const hour = minute * 60;
+    const hour = minute * 24;
     const day = hour  * 60;
     const d = Math.floor(gap / day);
     const h = Math.floor((gap % day) / hour);
     const m = Math.floor((gap % hour) / minute);
     const s = Math.floor((gap % minute) / second);
+
+    console.log(gap);
+    console.log(Math.floor(gap / day));
 
     daysEl.innerText = d;
     hourEl.innerText = h;
